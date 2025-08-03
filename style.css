@@ -201,14 +201,20 @@ section, .skills, .projects, .timeline-tree {
     
 }
 
+.resume-btn {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: #55b388;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
 
-.button-cv:hover {
-
-
-    transition: 0.5s;
-    
-    transform: scale(1.05);
-    
+.resume-btn:hover {
+  background-color: #b3555e;
 }
 
 .skills {
@@ -261,8 +267,7 @@ section, .skills, .projects, .timeline-tree {
     background-color: rgba(147, 135, 135, 0.059);
     background-blend-mode: multiply; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-    
+    transition: transform 0.3s ease;   
 }
 .skill-card:hover{
   transform: scale(1.05);

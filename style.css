@@ -19,6 +19,7 @@ body{
     background-blend-mode: multiply;
     background-size: cover;
     background-color: #0e0606ab;
+
 }
 section, .skills, .projects, .timeline-tree {
   margin-top: 60px;
@@ -26,20 +27,11 @@ section, .skills, .projects, .timeline-tree {
   scroll-margin-top: 80px; /* Ensure navbar doesn't cover content */
 }
 
-.navbar{
-
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;           /* Full width across screen */
-  display: flex;
-  justify-content: space-between; /* or center / flex-end, etc */
-  align-items: center;
-  padding: 1rem 2rem;
-  z-index: 1000;
-  backdrop-filter: blur(20px);
+.navbar {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .logo img{
     display: flex;
     justify-content: space-between;
@@ -50,30 +42,19 @@ section, .skills, .projects, .timeline-tree {
      
 }
 
-.nav-links{
-    display: flex;
-    justify-content: right;
-    text-align: center;
-    gap: 40px;
-    
-    width:100%;
-
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  
 }
 
-.nav-links a{
-    text-decoration: none;
-    color: white;
-    box-shadow: 0 4px 10px rgba(232, 10, 217, 0.4);
-    align-items: center;
-    
+.nav-link:hover {
+  color: #00ffd5 !important;
 }
-
-.nav-links a:hover{
-    color: rgb(198, 229, 23);
-    transition: 1s;
-    
-    
-    
+.navbar-brand {
+  font-weight: bold;
+  color: white !important;
 }
 
 .hamburger {
@@ -208,9 +189,10 @@ section, .skills, .projects, .timeline-tree {
   background-color: #55b388;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
   font-weight: bold;
+  
   transition: background-color 0.3s ease;
+  
 }
 
 .resume-btn:hover {
@@ -289,68 +271,64 @@ section, .skills, .projects, .timeline-tree {
   color: whitesmoke;
   padding-top: 10px;
 }
-.projects{
-    padding-left: 4px;
-    padding-right: 4px;
-    
-}
-.projects h1{
-    justify-content: center;
-    display: flex;
-    margin-top: 100px;
-    color: azure;
-    
-    font-size: x-large;
-    
+.projects {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.project-contents{
-   
-    backdrop-filter: blur(20px);
-    width: auto;
-    
-    background-size: cover;
-    background-blend-mode: luminosity;
-    border-radius: 10px;
-    margin-top: 20px;
-    justify-content: space-between;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease-out forwards;
+.projects h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: white;
 }
-    
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
 }
 
-.project-card img {
+.project-img img {
   width: 100%;
-  max-width: 200px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  
+  height: 200px;
+  object-fit: cover;
 }
 
+.project-info {
+  padding: 20px;
+  color: white;
+}
+
+.project-info h3 {
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
 
 @media (max-width: 768px) {
   .about {
@@ -406,33 +384,29 @@ section, .skills, .projects, .timeline-tree {
   }
 }
 
-/*web dev section*/
+/* Timeline Container */
+
+  
 .timeline-tree {
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
   position: relative;
-  padding-top: 1.5rem;
+  padding: 2rem 1rem;
+  background: transparent;
+  
+  /* Start hidden for animation */
+  
   transform: translateY(20px);
-  animation: fadeInUp 1s ease-out forwards;
-    
-    
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
+}
+  
 
 
 .timeline-tree h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: white;
-  font-weight: bolder;
-
+  font-weight: bold;
 }
 
 .timeline-tree::before {
@@ -448,23 +422,17 @@ section, .skills, .projects, .timeline-tree {
 }
 
 .timeline-tree::after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
 
+/* Timeline Items */
 .timeline-item {
   width: 45%;
-  padding: 1rem 1.2rem;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  padding: 1rem;
   position: relative;
-  margin: 1.5rem 0;
-  min-height: 100px;
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  
+  background: transparent;
 }
 
 .timeline-item.left {
@@ -479,19 +447,6 @@ section, .skills, .projects, .timeline-tree {
   clear: both;
   text-align: left;
   margin-left: 5%;
-}
-
-.timeline-item h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #f60505;
-  font-weight: bolder;
-}
-
-.timeline-item p {
-  font-size: 1rem;
-  margin-top: 0.3rem;
-  color:whitesmoke;
 }
 
 .timeline-item::before {
@@ -513,183 +468,50 @@ section, .skills, .projects, .timeline-tree {
   left: -30px;
 }
 
-/* ✅ Preserve zigzag and center line on all screen sizes */
-@media screen and (max-width: 768px) {
-  .timeline-item {
-    margin: 1.5rem 0;
-    min-height: 100px;
-    backdrop-filter: blur(40px);
-  }
-
-  .timeline-tree::before {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .timeline-item.left {
-    float: left;
-    text-align: right;
-    margin-right: 5%;
-  }
-
-  .timeline-item.right {
-    float: right;
-    text-align: left;
-    margin-left: 5%;
-  }
-
-  .timeline-item.left::before {
-    right: -30px;
-    left: auto;
-  }
-
-  .timeline-item.right::before {
-    left: -30px;
-    right: auto;
-  }
-}
-/*cybersec section*/
-.timeline-tree2 {
-  max-width: 1000px;
-  margin: auto;
+/* Glassy Content */
+.timeline-content {
   position: relative;
-  padding-top: 1.5rem;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease-out forwards;
-    
-    
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-.timeline-tree2 h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: white;
-  font-weight: bolder;
-
-}
-
-.timeline-tree2::before {
-  content: '';
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  height: 90%;
-  background: #66cc99;
-  z-index: -1;
-}
-
-.timeline-tree2::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.timeline-item {
-  width: 45%;
-  padding: 1rem 1.2rem;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-  position: relative;
-  margin: 1.5rem 0;
-  min-height: 100px;
-  backdrop-filter: blur(40px);
+  z-index: 1;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   
 }
 
-.timeline-item.left {
-  float: left;
-  clear: both;
-  text-align: right;
-  margin-right: 5%;
-}
-
-.timeline-item.right {
-  float: right;
-  clear: both;
-  text-align: left;
-  margin-left: 5%;
-}
-
-.timeline-item h3 {
+.timeline-content h3 {
   margin: 0;
   font-size: 1.2rem;
   color: #f60505;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
-.timeline-item p {
+.timeline-content p {
+  margin-top: 0.5rem;
   font-size: 1rem;
-  margin-top: 0.3rem;
-  color:whitesmoke;
+  color: whitesmoke;
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  top: 20px;
-  width: 12px;
-  height: 12px;
-  background: #66cc99;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.timeline-item.left::before {
-  right: -30px;
-}
-
-.timeline-item.right::before {
-  left: -30px;
-}
-
-/*cybersecurity section*/
-
-/* ✅ Preserve zigzag and center line on all screen sizes */
+/* Responsive */
 @media screen and (max-width: 768px) {
   .timeline-item {
-    margin: 1.5rem 0;
-    min-height: 100px;
-    backdrop-filter: blur(20px);
+    width: 45%;
+    margin: 1rem auto;
+    float: none;
+    text-align: center;
   }
 
-  
-  .timeline-tree2::before {
+  .timeline-item.left,
+  .timeline-item.right {
+    margin: 0 auto;
+  }
+
+  .timeline-item.left::before,
+  .timeline-item.right::before {
     left: 50%;
     transform: translateX(-50%);
-  }
-
-  .timeline-item.left {
-    float: left;
-    text-align: right;
-    margin-right: 5%;
-  }
-
-  .timeline-item.right {
-    float: right;
-    text-align: left;
-    margin-left: 5%;
-  }
-
-  .timeline-item.left::before {
-    right: -30px;
-    left: auto;
-  }
-
-  .timeline-item.right::before {
-    left: -30px;
-    right: auto;
   }
 }
 
@@ -813,7 +635,7 @@ section, .skills, .projects, .timeline-tree {
 }
 
 .site-footer {
-  background-color: rgb(65, 63, 63);
+backdrop-filter: blur(20px);
   color: white;
   padding: 40px 20px;
   text-align: center;
@@ -929,3 +751,21 @@ section, .skills, .projects, .timeline-tree {
   transform: scale(1.1);
 }
 
+/* Force your original dark background back */
+body {
+  background: url("web-images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+/* Optional: reapply dark overlay for brightness control */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.555); /* adjust darkness here */
+  z-index: -1;
+}

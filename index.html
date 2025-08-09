@@ -4,37 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
-  <div class="logo">
-     <img src="https://img.icons8.com/dusk/64/atom-editor.png" alt="logo">
+<!-- Bootstrap Navbar with Glass Blur -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <img src="https://img.icons8.com/dusk/64/atom-editor.png" alt="logo" width="40" class="me-2">
+      Kevin Birich
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#journey">Journey</a></li>
+        <li class="nav-item"><a class="nav-link" href="#DevOps">DevSecOps</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a></li>
+      </ul>
     </div>
-    <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#journey">Journey</a>
-        <a href="#DevOps">DevSecOps</a>
-        <a href="#contacts">Contacts</a>
-
-    </div>
-
-     <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
   </div>
-  </nav>
+</nav>
+
+<!-- Rest of your portfolio sections here -->
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 
   <section id="home"></section>
   
@@ -84,41 +99,57 @@
 
 
 
-
-  <section id="projects" class="projects">
-    <h1>My Projects</h1>
-    <div class="project-contents">
-      
-      <div class="project-card">
-      <img src="web-images/image3.jpg" alt="Placeholder Project">
-      <h3>Project Title</h3>
-      <p>Coming soon...</p>
-    </div>
-    
-    <div class="project-card">
-      <img src="web-images/image3.jpg" alt="Placeholder Project">
-      <h3>Project Title</h3>
-      <p>Coming soon...</p>
-    </div>
+     
+<section id="projects" class="projects">
+  <h1>My Projects</h1>
+  <div class="project-grid">
 
     <div class="project-card">
-      <img src="web-images/image3.jpg" alt="Placeholder Project">
-      <h3>Project Title</h3>
-      <p>Coming soon...</p>
+      <div class="project-img">
+        <img src="web-images/carrental.png" alt="Car Rental Management System">
+      </div>
+      <div class="project-info">
+        <h3>Car Rental Management Web App</h3>
+        <p>
+          A PHP & MySQL-based car rental management system featuring user booking,
+          mobile payment integration (M-Pesa STK Push), and an admin dashboard for fleet management.
+          Planned upgrade: migrate to a modern stack using React for the frontend, Node.js/Express for the backend,
+          and MongoDB/PostgreSQL for the database.
+        </p>
+        <div class="project-links">
+          <a href="http://your-live-demo-link.com" target="_blank" class="resume-btn view">Live Demo</a>
+          <a href="https://github.com/yourusername/car-rental-system" target="_blank" class="resume-btn">Source Code</a>
+          <a href="car-rental-case-study.html" class="resume-btn view">Read Case Study</a>
+        </div>
+      </div>
     </div>
 
     <div class="project-card">
-      <img src="web-images/image3.jpg" alt="Placeholder Project">
-      <h3>Project Title</h3>
-      <p>Coming soon...</p>
+      <div class="project-img">
+        <img src="web-images/image3.jpg" alt="Placeholder Project">
+      </div>
+      <div class="project-info">
+        <h3>Project Title</h3>
+        <p>Coming soon...</p>
+      </div>
     </div>
-    </div>
-    
-      
-    
-  </section>
 
-<section id="journey" class="timeline-tree">
+    <div class="project-card">
+      <div class="project-img">
+        <img src="web-images/image3.jpg" alt="Placeholder Project">
+      </div>
+      <div class="project-info">
+        <h3>Project Title</h3>
+        <p>Coming soon...</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <section id="journey" class="timeline-tree">
     <h2>🚀 Developer Journey</h2>
 
     <div class="timeline-item left">
@@ -157,7 +188,7 @@
     </div>
   </section>
 
-  <section id="DevOps" class="timeline-tree2">
+  <section id="DevOps" class="timeline-tree">
     <h2>🛡️ Cybersecurity Journey</h2>
 
     <div class="timeline-item right">

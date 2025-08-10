@@ -18,12 +18,22 @@
 body {
   margin: 0;
   min-height: 100vh;
+  /* Simplify the background - remove fixed positioning */
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-              url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
-  background-size: cover;
+              url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center / cover;
   font-family: 'Montserrat', sans-serif;
   color: white;
-  transition: all 0.3s ease;
+  /* Remove transition from body */
+}
+ body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  z-index: -1;
 }
     .head{
     text-align: center;
@@ -42,16 +52,20 @@ body {
     margin: 0 auto;
     }
     .glass-panel {
-      width: auto;
-      margin:  100px;
-      padding: 2rem;
-      background-color: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 10px;
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
+  width: auto;
+  margin: 100px;
+  padding: 2rem;
+  /* Reduce blur effect */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Consider removing backdrop-filter or reducing blur amount */
+  backdrop-filter: blur(5px); /* Reduced from 12px */
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Add will-change for better performance */
+  will-change: transform;
+}
    .glass-panel h2 {
     color: rgb(10, 193, 249);
    }
@@ -86,22 +100,31 @@ body {
 }
 
 .skill-card {
-     background-size: cover;
-    background: url();
-    border-radius: 20px;
-    padding:30px;
-    background-image: rgba(236, 246, 246, 0.032) url(web-images/neuralnetwork.jpg);
-    background-size: cover;  
-    background-color: rgba(147, 135, 135, 0.059);
-    backdrop-filter: blur(10px);
-    background-blend-mode: multiply; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;   
-}
-.skill-card:hover{
-  transform: scale(1.05);
+  border-radius: 20px;
+  padding: 30px;
+  /* Simplify background */
+  background-color: rgba(147, 135, 135, 0.059);
+  /* Reduce or remove backdrop-filter */
+  backdrop-filter: blur(5px); /* Reduced from 10px */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  /* Optimize transitions */
+  transition: transform 0.3s ease;
+  /* Add will-change */
+  will-change: transform;
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .glass-panel, .skill-card {
+    /* Disable blur on mobile completely */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  .glass-panel {
+    margin: 20px;
+  }
+}
 
 .skill-card h1 {
   text-align: left;
@@ -118,7 +141,9 @@ body {
   color: whitesmoke;
   padding-top: 10px;
 }
-
+.glass-panel, .skill-card {
+  will-change: transform;
+}
   </style>
 </head>
 <body>

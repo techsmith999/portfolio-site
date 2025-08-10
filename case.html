@@ -22,20 +22,12 @@ body {
   /* Simplify the background - remove fixed positioning */
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
               url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+              background-size: cover;
   font-family: 'Montserrat', sans-serif;
   color: white;
   /* Remove transition from body */
 }
- body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-  z-index: -1;
-}
+
     .head{
     text-align: center;
     padding-top: 30px;
@@ -66,7 +58,12 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   /* Add will-change for better performance */
   will-change: transform;
+ transition: transform 0.3s ease;   
 }
+.glass-panel:hover{
+  transform: scale(1.05);
+}
+
    .glass-panel h2 {
     color: rgb(10, 193, 249);
    }
@@ -112,14 +109,19 @@ body {
   transition: transform 0.3s ease;
   /* Add will-change */
   will-change: transform;
+ transition: transform 0.3s ease;   
 }
+.skill-card:hover{
+  transform: scale(1.05);
+}
+
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .glass-panel, .skill-card {
     /* Disable blur on mobile completely */
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   
   .glass-panel {

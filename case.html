@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backdrop Filter Test</title>
+  <style>
+   /* Base Styles */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+              url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  transition: all 0.3s ease;
+}
+    .head{
+    text-align: center;
+    padding-top: 30px;
+    }
+    .head h1{
+    background: linear-gradient(135deg, #e3f310f2, #10f6cc);
+    background-clip: text;
+    font-family: montserrat;
+    opacity: 1;
+    color:transparent;
+    font-weight:  900px;;
+    margin-top: 15px;
+    width: fit-content; /* Only take needed width */
+    overflow: hidden; /* Hide overflow */
+    margin: 0 auto;
+    }
+    .glass-panel {
+      width: auto;
+      margin:  100px;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 10px;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+   .glass-panel h2 {
+    color: rgb(10, 193, 249);
+   }
+.skills {
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.skills h1 {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.skills h1 .web {
+  font-family: montserrat;
+  font-weight: bolder;
+   background: linear-gradient(135deg, #8be784, #bc153c);
+    background-clip: text;
+    color:transparent;
+    font-weight:900;
+}
+.skills-contents {
+    grid-template-columns: repeat(2, 4fr);
+    display: grid;
+    width: auto;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px;
+    padding-top: 30px;
+    opacity: 1;
+}
+
+.skill-card {
+     background-size: cover;
+    background: url();
+    border-radius: 20px;
+    padding:30px;
+    background-image: rgba(236, 246, 246, 0.032) url(web-images/neuralnetwork.jpg);
+    background-size: cover;  
+    background-color: rgba(147, 135, 135, 0.059);
+    backdrop-filter: blur(10px);
+    background-blend-mode: multiply; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;   
+}
+.skill-card:hover{
+  transform: scale(1.05);
+}
+
+
+.skill-card h1 {
+  text-align: left;
+  font-size: 17px;
+  text-align: left;
+  color: rgb(10, 193, 249);
+  font-weight: lighter;
+  padding: 0%;
+  margin: 0%;
+}
+
+.skill-card p {
+  font-size: 14px;
+  color: whitesmoke;
+  padding-top: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="head"><h1>CAR RENTAL MANAGEMENT WEB APP</h1></div>
+  <div class="glass-panel">
+    <h2>Case Study</h2>
+    <p>I developed the project end-to-end, covering UI/UX, backend logic, database schema design, and payment gateway integration.</p>
+  </div>
+  <section class="skills">
+  <div class="skills-contents">
+     <div class="skill-card">
+      <h1>OVERVIEW</h1>
+      <p>
+      I developed the project end-to-end, covering UI/UX, backend logic, database schema design, and payment gateway integration.</p>
+     </div>
+     <div class="skill-card">
+      <h1>MY ROLE</h1>
+      <p>I craft responsive, visually engaging layouts using modern CSS techniques like Flexbox, Grid, and custom animations to bring designs to life.</p>
+     </div>
+     <div class="skill-card">
+      <h1>KEY FEATURES</h1>
+      <ul>
+      <li>User-facing booking portal to search, select, and confirm rentals.</li>
+      <li>Seamless M-Pesa integration for secure mobile payments.</li>
+      <li>Admin dashboard for car management, booking approvals, and transaction monitoring.</li>
+      <li>Authentication system for customers and admins with role-based access.</li>
+    </ul>
+     </div>
+     <div class="skill-card">
+      <h1>CHALLENGES & SOLUTIONS</h1>
+      <ul>
+      <li><strong>Payment API callback handling</strong> — Solved by using Ngrok during development and ensuring real-time database updates on successful transactions.</li>
+      <li><strong>Security</strong> — Removed public admin registration to prevent unauthorized access.</li>
+      <li><strong>Scalability</strong> — Designed a normalized database schema for performance and easy upgrades.</li>
+    </ul>
+     </div>
+      <div class="skill-card">
+      <h1>FUTURE UPGRADE PLAN</h1>
+      <p>
+      I plan to rebuild the project using a modern JavaScript stack for improved scalability and performance:
+    </p>
+    <ul>
+      <li><strong>Frontend:</strong> React + Tailwind CSS for a responsive, component-based UI.</li>
+      <li><strong>Backend:</strong> Node.js + Express with REST APIs.</li>
+      <li><strong>Database:</strong> MongoDB or PostgreSQL for scalability.</li>
+      <li><strong>Authentication:</strong> JWT-based authentication with role-based permissions.</li>
+    </ul>
+     </div>
+  </div>
+
+</section>
+
+</body>
+</html>

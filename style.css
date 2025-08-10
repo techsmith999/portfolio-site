@@ -238,10 +238,12 @@ section, .skills, .projects, .timeline-tree {
 }
 
 .skills h1 .web {
-  color: #09de34;
   font-family: montserrat;
   font-weight: bolder;
-  
+   background: linear-gradient(135deg, #8be784, #bc153c);
+    background-clip: text;
+    color:transparent;
+    font-weight:900;
 }
 .skills-contents {
     grid-template-columns: repeat(4, 1fr);
@@ -306,7 +308,10 @@ section, .skills, .projects, .timeline-tree {
 .projects h1 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: white;
+   background: linear-gradient(135deg, #8be784, #bc153c);
+    background-clip: text;
+    color:transparent;
+    font-weight:900;
 }
 
 .project-grid {
@@ -332,7 +337,7 @@ section, .skills, .projects, .timeline-tree {
 
 .project-img img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -430,7 +435,10 @@ section, .skills, .projects, .timeline-tree {
   font-size: 2rem;
   margin-bottom: 2rem;
   font-weight: bold;
-  color: white;
+   background: linear-gradient(135deg, #8be784, #bc153c);
+    background-clip: text;
+    color:transparent;
+    font-weight:900;
 }
 
 .timeline-tree::before {
@@ -542,7 +550,7 @@ section, .skills, .projects, .timeline-tree {
 /* Contact Section */
 .contact {
   padding: 60px 20px;
-  backdrop-filter: blur(20px);
+  
   color: white;
   text-align: center;
 }
@@ -550,7 +558,10 @@ section, .skills, .projects, .timeline-tree {
 .contact h2 {
   font-size: 2rem;
   margin-bottom: 40px;
-  color: #09de34;
+   background: linear-gradient(135deg, #8be784, #bc153c);
+    background-clip: text;
+    color:transparent;
+    font-weight:900;
   font-family: montserrat;
 }
 
@@ -560,6 +571,7 @@ section, .skills, .projects, .timeline-tree {
   align-items: flex-start;
   gap: 40px;
   flex-wrap: wrap;
+  backdrop-filter: blur(20px);
 }
 
 /* Contact Form */
@@ -581,7 +593,7 @@ section, .skills, .projects, .timeline-tree {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: #45d3d3;
   font-size: 1rem;
 }
 
@@ -609,6 +621,7 @@ section, .skills, .projects, .timeline-tree {
   align-items: center;
   gap: 20px;
   text-align: center;
+  margin-top: 10%;
   
 }
 
@@ -663,7 +676,7 @@ backdrop-filter: blur(20px);
   color: white;
   padding: 40px 20px;
   text-align: center;
-  border-top: 1px solid #333;
+  border-top: 5px solid #2f8392;
   margin-top: 60px;
 }
 

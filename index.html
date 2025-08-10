@@ -27,11 +27,21 @@
   <div class="container">
     <a class="navbar-brand" href="#home">
       <img src="https://img.icons8.com/dusk/64/atom-editor.png" alt="logo" width="40" class="me-2">
-      Kevin Birich
+      𝕶𝕰𝖁𝕴𝕹 𝕭𝕴𝕽𝕴𝕮𝕳
     </a>
+    
+    <!-- Centered Dark Mode Toggle -->
+    <div class="dark-mode-toggle-container">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="darkModeToggle">
+        <label class="form-check-label" for="darkModeToggle">🌙</label>
+      </div>
+    </div>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
@@ -56,11 +66,11 @@
   <section class="about">
     <div class="about-contents">
       <h1>Hi my name is <span class="name"> Kevin Birich </span> I'm a</h1>
-      <h2>FRONT-END WEB DEVELOPER</h2>
-      <h3>I'm a front-end web developer passionate about crafting responsive, user-friendly interfaces. I also have a growing interest in cybersecurity and hands-on experience with networking tools like Cisco Packet Tracer.</h3>
-      <a href="kevin_birich_resume.pdf" download="Kevin_birich_Resume.pdf" class="resume-btn">Download Resume</a>
-      <a href="kevin_birich_resume.pdf" target="_blank" class="resume-btn view">View Resume</a>
-     
+      <h2>FRONT-END WEB DEVELOPER & ASPIRING FULL STACK</h2>
+      <h3>I'm a front-end web developer passionate about crafting responsive, user-friendly interfaces, I am actively learning to full stack. I also have a growing interest in cybersecurity and hands-on experience with networking tools like Cisco Packet Tracer.</h3>
+      <a href="kevin_birich_resume.pdf" download="Kevin_birich_Resume.pdf" class="modern-button">Download Resume</a>
+      <a href="kevin_birich_resume.pdf" target="_blank" class="modern-button">View Resume</a>
+
     </div>
     <div class="dev">
       <img src="">
@@ -117,9 +127,9 @@
           and MongoDB/PostgreSQL for the database.
         </p>
         <div class="project-links">
-          <a href="http://your-live-demo-link.com" target="_blank" class="resume-btn view">Live Demo</a>
-          <a href="https://github.com/yourusername/car-rental-system" target="_blank" class="resume-btn">Source Code</a>
-          <a href="car-rental-case-study.html" class="resume-btn view">Read Case Study</a>
+          <a href="http://your-live-demo-link.com" target="_blank" class="modern-button">Live Demo</a>
+          <a href="https://github.com/yourusername/car-rental-system" target="_blank" class="modern-button">Source Code</a>
+          <a href="car-rental-case-study.html" class="modern-button">Read Case Study</a>
         </div>
       </div>
     </div>
@@ -295,6 +305,30 @@
 <button id="backToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
 
   <script src="script.js"></script>
+<script>
+// Dark Mode Toggle with Background Preservation
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('darkModeToggle');
+  const body = document.body;
+  
+  // Initialize
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add('dark-mode');
+    toggle.checked = true;
+  }
+  
+  // Toggle
+  toggle.addEventListener('change', function() {
+    if (this.checked) {
+      body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      body.classList.remove('dark-mode');
+      localStorage.removeItem('darkMode');
+    }
+  });
+});
+</script>
 </body>
 
 </html>

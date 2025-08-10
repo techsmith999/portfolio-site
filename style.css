@@ -8,9 +8,64 @@ html{
     box-sizing: border-box;
     font-family: monospace;
     font-weight: lighter;
-    
-    
+   } 
+   /* Smooth transitions */
+body, .navbar {
+  transition: all 0.4s ease;
 }
+
+/* Dark mode card styling */
+.dark-mode .skill-card,
+.dark-mode .project-card {
+  background-color: rgba(40, 40, 40, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode button styling */
+.dark-mode .modern-button {
+  background: linear-gradient(135deg, #5566ff, #8a2be2);
+}
+/* Dark Mode with Background Preservation */
+/* Dark Mode with Background Preservation */
+.dark-mode {
+  
+}
+
+.dark-mode::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.776); /* Adjust opacity (0.7) for darkness level */
+  z-index: -1;
+  pointer-events: none; /* Allows clicking through the overlay */
+}
+
+/* Text and element colors for dark mode */
+.dark-mode body {
+  color: #f1f1f1;
+}
+
+.dark-mode .navbar {
+  background-color: rgba(30, 30, 30, 0.8) !important;
+  border-bottom: 1px solid #444 !important;
+}
+
+.dark-mode .nav-link,
+.dark-mode .navbar-brand,
+.dark-mode .form-check-label {
+  color: #f1f1f1 !important;
+}
+
+/* Content that should appear above the overlay */
+body > *:not(:before) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Rest of your existing CSS... */
 
 body{
     padding-top: 80px;
@@ -46,11 +101,10 @@ section, .skills, .projects, .timeline-tree {
   color: white !important;
   font-weight: 500;
   transition: color 0.3s ease;
-  
 }
 
 .nav-link:hover {
-  color: #00ffd5 !important;
+  color: #00ffd5 !important
 }
 .navbar-brand {
   font-weight: bold;
@@ -119,41 +173,24 @@ section, .skills, .projects, .timeline-tree {
 }
 
 .about-contents {
-
     margin: 50px;
 }
 
 
 .about h2{
-    
-    color: rgb(13, 234, 42);
+    background: linear-gradient(135deg, #8be784, #bc153c);
     font-size: clamp(1.5rem, 5vw, 3rem);
+    background-clip: text;
     font-family: montserrat;
-    opacity: 0;
-    transform: scale(0.5);
-    animation: pop 2s ease-out forwards;
-    
-}
- 
-@keyframes pop {
-    to {
     opacity: 1;
-    transform: scale(1);
-  }
-
+    color:transparent;
+    font-weight:900;
+    
 }
 
 .about h3 {
-   opacity: 0;
-   transform: translateY(20px);
-   animation: fadeInUp 2s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+   opacity: 1;
+  
 }
 .dev{
    max-width: 100%;
@@ -167,37 +204,27 @@ section, .skills, .projects, .timeline-tree {
     border-radius: 30px;
     margin-right: 50px;
 }
-.button-cv{
-   margin: 30px 50px;
-    max-width: 200px;
-    width: 100%;
-    height: 40px;
-    background: none;
-    border-radius: 10px;
-    border:1px solid aqua;
-    color: aliceblue;
-    backdrop-filter: blur(50px);
-    transition: transform 0.3s ease;
-    cursor: grab;
-    
-}
 
-.resume-btn {
-  margin-top: 2rem;
+.modern-button {
   display: inline-block;
-  padding: 0.7rem 1.5rem;
-  background-color: #55b388;
-  color: white;
+  padding: 4.875px 9.75px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   text-decoration: none;
-  font-weight: bold;
-  
-  transition: background-color 0.3s ease;
-  
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.resume-btn:hover {
-  background-color: #b3555e;
+.modern-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
+
+
 
 .skills {
     margin-left: 10px;
@@ -291,7 +318,7 @@ section, .skills, .projects, .timeline-tree {
 .project-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -345,18 +372,14 @@ section, .skills, .projects, .timeline-tree {
     margin: 50px;
   }
 .about h2 {
-  font-size: clamp(1.5rem, 5vw, 3rem);
-  color: rgb(13, 234, 42);
-  font-family: montserrat;
-  opacity: 0;
-  transform: scale(0.5);
-  animation: pop 2s ease-out forwards;
-}
-@keyframes pop {
-  to {
+   background: linear-gradient(135deg, #8be784, #bc153c);
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    background-clip: text;
+    font-family: montserrat;
     opacity: 1;
-    transform: scale(1);
-  }
+    color:transparent;
+    font-weight:900;
+    
 }
 
 .about h3 {
@@ -407,6 +430,7 @@ section, .skills, .projects, .timeline-tree {
   font-size: 2rem;
   margin-bottom: 2rem;
   font-weight: bold;
+  color: white;
 }
 
 .timeline-tree::before {

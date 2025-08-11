@@ -101,6 +101,8 @@ section, .skills, .projects, .timeline-tree {
   color: white !important;
   font-weight: 500;
   transition: color 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+  gap: 10px;
 }
 
 .nav-link:hover {

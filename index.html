@@ -135,7 +135,7 @@
 
     <div class="project-card">
       <div class="project-img">
-        <img src="web-images/download (1).jpg" alt="Placeholder Project">
+        <img src="web-images/cat2.jpg" alt="Placeholder Project">
       </div>
       <div class="project-info">
         <h3></h3>
@@ -145,7 +145,7 @@
 
     <div class="project-card">
       <div class="project-img">
-        <img src="web-images/hank.jpg" alt="Placeholder Project" >
+        <img src="web-images/cat2.jpg" alt="Placeholder Project" >
       </div>
       <div class="project-info">
         <h3></h3>
@@ -327,6 +327,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+const switchSound = new Audio('web-images/sound.mp3'); // path to your audio file
+
+document.getElementById('darkModeToggle').addEventListener('change', () => {
+  switchSound.currentTime = 0; // rewind to start
+  switchSound.play();          // play the sound
+  document.body.classList.toggle('dark-mode'); // toggle dark mode
+});
+
 </script>
 </body>
 

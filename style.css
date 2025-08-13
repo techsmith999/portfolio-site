@@ -1,5 +1,7 @@
 html{
     scroll-behavior: smooth;
+    cursor:url('web-images/popcat.png') 0 0, auto ;
+
 }
 
 *{
@@ -103,10 +105,13 @@ section, .skills, .projects, .timeline-tree {
   transition: color 0.3s ease;
   font-family: 'Courier New', Courier, monospace;
   gap: 10px;
+  cursor:url('web-images/cursor.png') 0 0, auto ;
+
 }
 
 .nav-link:hover {
   color: #00ffd5 !important
+
 }
 .navbar-brand {
   font-weight: bold;
@@ -208,6 +213,7 @@ section, .skills, .projects, .timeline-tree {
 }
 
 .modern-button {
+  cursor:url('web-images/cursor.png') 0 0, auto ;
   display: inline-block;
   padding: 4.875px 9.75px;
   font-size: 13px;
@@ -334,7 +340,7 @@ section, .skills, .projects, .timeline-tree {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.1);
 }
 
 .project-img img {
@@ -513,6 +519,11 @@ section, .skills, .projects, .timeline-tree {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   
+ transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: scale(1.1);
 }
 
 .timeline-content h3 {
@@ -645,6 +656,8 @@ section, .skills, .projects, .timeline-tree {
   width: 40px;
   height: 40px;
   transition: transform 0.3s ease;
+  cursor:url('web-images/cursor.png') 0 0, auto ;
+
 }
 
 .socials-icons a img:hover {
@@ -708,6 +721,8 @@ backdrop-filter: blur(20px);
   height: 30px;
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
+  cursor:url('web-images/cursor.png') 0 0, auto ;
+
 }
 
 .footer-socials a img:hover {

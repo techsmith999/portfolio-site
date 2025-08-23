@@ -43,6 +43,8 @@ body, .navbar {
   background: rgba(0, 0, 0, 0.776); /* Adjust opacity (0.7) for darkness level */
   z-index: -1;
   pointer-events: none; /* Allows clicking through the overlay */
+    cursor:url('web-images/cursor.png') 0 0, auto ;
+
 }
 
 /* Text and element colors for dark mode */
@@ -518,7 +520,8 @@ section, .skills, .projects, .timeline-tree {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  
+    cursor:url('web-images/cursor.png') 0 0, auto ;
+
  transition: transform 0.3s ease;
 }
 
@@ -616,13 +619,13 @@ section, .skills, .projects, .timeline-tree {
   color: black;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
   background-color: #07b62c;
+  cursor:url('web-images/cursor.png') 0 0, auto ;
 }
 
 /* Socials */
